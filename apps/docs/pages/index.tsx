@@ -1,10 +1,12 @@
 import type { NextPage } from "next";
+import React from "react";
 import Head from "next/head";
 import Image from "next/image";
-import Button from "win-ui/button";
+import ToggleButton from "win-ui/toggle-button";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
+  const [selected, setSelected] = React.useState(false);
   return (
     <div className={styles.container}>
       <Head>
@@ -21,14 +23,12 @@ const Home: NextPage = () => {
             width: "100%",
           }}
         >
-          {/* <Button variant="accent">Label</Button> */}
-          {/* <Button variant="accent" disabled>
-            Label
-          </Button> */}
-          <Button variant="standard">Label</Button>
-          {/* <Button variant="standard" disabled>
-            Label
-          </Button> */}
+          <ToggleButton
+            selected={selected}
+            onClick={() => setSelected(!selected)}
+          >
+            Text
+          </ToggleButton>
         </div>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
