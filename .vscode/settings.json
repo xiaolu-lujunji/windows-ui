@@ -1,7 +1,4 @@
 {
   "files.autoSave": "onFocusChange",
-  "editor.formatOnSave": true,
-  "cssvar.files": [
-    "${workspaceFolder}/packages/win-ui/src/themes/light-theme.css"
-  ]
+  "editor.formatOnSave": true
 }

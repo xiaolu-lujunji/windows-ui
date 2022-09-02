@@ -2,11 +2,10 @@ import type { NextPage } from "next";
 import React from "react";
 import Head from "next/head";
 import Image from "next/image";
-import ToggleButton from "win-ui/toggle-button";
+import LinkButton from "win-ui/link-button";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
-  const [selected, setSelected] = React.useState(false);
   return (
     <div className={styles.container}>
       <Head>
@@ -23,12 +22,7 @@ const Home: NextPage = () => {
             width: "100%",
           }}
         >
-          <ToggleButton
-            selected={selected}
-            onClick={() => setSelected(!selected)}
-          >
-            Text
-          </ToggleButton>
+          <LinkButton href="https://www.bilibili.com">Text</LinkButton>
         </div>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
