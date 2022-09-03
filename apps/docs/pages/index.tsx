@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import React from "react";
 import Head from "next/head";
 import Image from "next/image";
-import LinkButton from "win-ui/link-button";
+import Link from "win-ui/link";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
@@ -22,7 +22,7 @@ const Home: NextPage = () => {
             width: "100%",
           }}
         >
-          <LinkButton href="https://www.bilibili.com">Text</LinkButton>
+          <Link href="#">Text</Link>
         </div>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
