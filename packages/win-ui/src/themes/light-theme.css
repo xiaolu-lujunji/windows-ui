@@ -30,4 +30,6 @@
   --stroke-color-control-stroke-default: rgba(0, 0, 0, 0.0578);
 
   --stroke-color-focus-stroke-outer: rgba(0, 0, 0, 0.8956);
+
+  --stroke-color-divider-stroke-default: rgba(0, 0, 0, 0.0803);
 }
