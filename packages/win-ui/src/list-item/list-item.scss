@@ -1,0 +1,179 @@
+.WinUI-list-item {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 150px;
+  height: 34px;
+  padding: 6px 11px 8px;
+  margin: 3px 5px;
+
+  color: var(--fill-color-text-primary);
+  background-color: transparent;
+  border: none;
+
+  border-radius: 4px;
+
+  &:hover {
+    background-color: var(--fill-color-subtle-secondary);
+  }
+
+  &:active {
+    color: var(--fill-color-text-secondary);
+    background-color: var(--fill-color-subtle-tertiary);
+  }
+
+  &:disabled {
+    color: var(--fill-color-text-disabled);
+    background-color: transparent;
+
+    .WinUI-list-item-hint-text {
+      color: var(--fill-color-text-disabled);
+    }
+  }
+
+  &:focus-visible {
+    // TODO: how to implement inner stroke?
+    outline: 2px solid var(--stroke-color-focus-stroke-outer);
+    outline-offset: 1px;
+  }
+
+  .WinUI-list-item-start-icon-root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+  }
+
+  .WinUI-list-item-content {
+    flex: 1;
+
+    font-family: "Segoe UI Variable";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+  }
+
+  .WinUI-list-item-hint-text {
+    font-family: "Segoe UI Variable";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: right;
+    color: var(--fill-color-text-secondary);
+  }
+}
+
+.WinUI-list-item.standard {
+  &.WinUI-selected {
+    background-color: var(--fill-color-subtle-secondary);
+
+    &::before {
+      position: absolute;
+      top: calc(50% - 16px / 2);
+      left: 0px;
+      width: 3px;
+      height: 16px;
+      content: "";
+      background: var(--fill-color-accent-default);
+      border-radius: 999px;
+    }
+
+    &:hover {
+      background-color: var(--fill-color-subtle-tertiary);
+    }
+
+    &:active {
+      background-color: var(--fill-color-subtle-secondary);
+
+      &::before {
+        position: absolute;
+        top: calc(50% - 10px / 2);
+        left: 0px;
+        width: 3px;
+        height: 10px;
+        content: "";
+        background: var(--fill-color-accent-default);
+        border-radius: 999px;
+      }
+    }
+
+    &:disabled {
+      background-color: var(--fill-color-subtle-secondary);
+
+      &::before {
+        position: absolute;
+        top: calc(50% - 16px / 2);
+        left: 0px;
+        width: 3px;
+        height: 16px;
+        content: "";
+        background: var(--fill-color-accent-disabled);
+        border-radius: 999px;
+      }
+    }
+  }
+}
+
+.WinUI-list-item.indented {
+  padding-left: 39px;
+}
+
+.WinUI-list-item.radio {
+  .WinUI-bullet-root {
+    content-visibility: hidden;
+  }
+  &.WinUI-selected {
+    .WinUI-bullet-root {
+      content-visibility: visible;
+    }
+  }
+
+  &:active {
+    .WinUI-bullet {
+      background-color: var(--fill-color-text-secondary);
+    }
+  }
+
+  &:disabled {
+    .WinUI-bullet {
+      background-color: var(--fill-color-text-disabled);
+    }
+  }
+}
+
+.WinUI-list-item.check {
+  .WinUI-icon.Accept {
+    margin-right: 14px;
+    content-visibility: hidden;
+  }
+  &.WinUI-selected {
+    .WinUI-icon.Accept {
+      content-visibility: visible;
+    }
+  }
+}
+
+.WinUI-list-item.cascading {
+  &.WinUI-selected {
+    background-color: var(--fill-color-subtle-secondary);
+  }
+}
+
+.WinUI-bullet-root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  margin-right: 12px;
+  .WinUI-bullet {
+    width: 4px;
+    height: 4px;
+    background: var(--fill-color-text-primary);
+    border-radius: 999px;
+  }
+}

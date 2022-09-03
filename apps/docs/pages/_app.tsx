@@ -1,5 +1,6 @@
 import "win-ui/themes/light-theme.css";
-import "win-ui/link/link.scss";
+import "win-ui/icon/icon.scss";
+import "win-ui/list-item/list-item.scss";
 import type { AppProps } from "next/app";
 
 function MyApp({ Component, pageProps }: AppProps) {
