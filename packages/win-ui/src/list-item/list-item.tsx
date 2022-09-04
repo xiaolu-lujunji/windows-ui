@@ -1,5 +1,6 @@
 import React from "react";
 import clsx from "clsx";
+import useForkRef from "../utils/use-fork-ref";
 
 const Bullet = () => (
   <div className="WinUI-bullet-root">
@@ -14,6 +15,12 @@ export interface ListItemProps
    * @default false
    */
   selected?: boolean;
+  /**
+   * If `true`, the list item is focused during the first mount.
+   * Focus will also be triggered if the value changes from false to true.
+   * @default false
+   */
+  autoFocus?: boolean;
   /**
    * The variant to use.
    * @default 'standard'
@@ -41,6 +48,7 @@ const ListItem = React.forwardRef<HTMLButtonElement, ListItemProps>(function (
   const {
     variant = "standard",
     selected = false,
+    autoFocus = false,
     startIcon,
     indented = false,
     hintText,
@@ -49,6 +57,17 @@ const ListItem = React.forwardRef<HTMLButtonElement, ListItemProps>(function (
     ...other
   } = props;
 
+  const listItemRef = React.useRef<HTMLButtonElement>(null);
+  React.useEffect(() => {
+    if (autoFocus) {
+      if (listItemRef.current) {
+        listItemRef.current.focus();
+      }
+    }
+  }, [autoFocus]);
+
+  const handleRef = useForkRef(listItemRef, ref);
+
   return (
     <button
       className={clsx("WinUI-list-item", variant, className, {
@@ -56,7 +75,7 @@ const ListItem = React.forwardRef<HTMLButtonElement, ListItemProps>(function (
         indented:
           indented && (variant === "standard" || variant === "cascading"),
       })}
-      ref={ref}
+      ref={handleRef}
       {...other}
     >
       {variant === "radio" && <Bullet />}

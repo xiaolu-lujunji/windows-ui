@@ -2,13 +2,16 @@ import type { NextPage } from "next";
 import React from "react";
 import Head from "next/head";
 import Image from "next/image";
-import ListItem from "win-ui/list-item";
 import Divider from "win-ui/divider";
 import Flyout from "win-ui/flyout";
+import List from "win-ui/list";
+import MenuList from "win-ui/menu-list";
+import MenuItem from "win-ui/menu-item";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
-  const [selected, setSelected] = React.useState(false);
+  const list = React.useRef(null);
+  const [selectedIndex, setSelectedIndex] = React.useState(1);
   return (
     <div className={styles.container}>
       <Head>
@@ -25,18 +28,48 @@ const Home: NextPage = () => {
             width: "100%",
           }}
         >
-          <Flyout>
-            <ListItem
+          <MenuList ref={list}>
+            <MenuItem
               variant="standard"
-              selected={selected}
-              indented
-              startIcon={<span className="WinUI-icon CircleRing" />}
+              selected={selectedIndex === 0}
+              // indented
+              // startIcon={<span className="WinUI-icon CircleRing" />}
               // hintText="Hint"
-              onClick={() => setSelected(!selected)}
+              onClick={() => setSelectedIndex(0)}
             >
               Text
-            </ListItem>
-          </Flyout>
+            </MenuItem>
+            <MenuItem
+              selected={selectedIndex === 1}
+              onClick={() => setSelectedIndex(1)}
+            >
+              Text
+            </MenuItem>
+            <MenuItem
+              selected={selectedIndex === 2}
+              onClick={() => setSelectedIndex(2)}
+            >
+              Text
+            </MenuItem>
+            <MenuItem
+              selected={selectedIndex === 3}
+              onClick={() => setSelectedIndex(3)}
+            >
+              Text
+            </MenuItem>
+            <MenuItem
+              selected={selectedIndex === 4}
+              onClick={() => setSelectedIndex(4)}
+            >
+              Text
+            </MenuItem>
+            <MenuItem
+              selected={selectedIndex === 5}
+              onClick={() => setSelectedIndex(5)}
+            >
+              Text
+            </MenuItem>
+          </MenuList>
         </div>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>

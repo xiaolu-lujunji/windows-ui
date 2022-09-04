@@ -3,6 +3,7 @@ import "win-ui/icon/icon.scss";
 import "win-ui/list-item/list-item.scss";
 import "win-ui/divider/divider.scss";
 import "win-ui/flyout/flyout.scss";
+import "win-ui/list/list.scss";
 import type { AppProps } from "next/app";
 
 function MyApp({ Component, pageProps }: AppProps) {
