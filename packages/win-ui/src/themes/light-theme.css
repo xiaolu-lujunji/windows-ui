@@ -32,4 +32,10 @@
   --stroke-color-focus-stroke-outer: rgba(0, 0, 0, 0.8956);
 
   --stroke-color-divider-stroke-default: rgba(0, 0, 0, 0.0803);
+
+  --stroke-color-surface-stroke-flyout: rgba(0, 0, 0, 0.0578);
+
+  --shadow-flyout: 0px 8px 16px rgba(0, 0, 0, 0.14);
+
+  --background-fill-color-acrylic-background-default: rgba(252, 252, 252, 0.85);
 }

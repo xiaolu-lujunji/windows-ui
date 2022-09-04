@@ -4,6 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 import ListItem from "win-ui/list-item";
 import Divider from "win-ui/divider";
+import Flyout from "win-ui/flyout";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
@@ -24,18 +25,18 @@ const Home: NextPage = () => {
             width: "100%",
           }}
         >
-          <ListItem
-            variant="standard"
-            selected={selected}
-            indented
-            disabled
-            startIcon={<span className="WinUI-icon CircleRing" />}
-            // hintText="Hint"
-            onClick={() => setSelected(!selected)}
-          >
-            Text
-          </ListItem>
-          <Divider />
+          <Flyout>
+            <ListItem
+              variant="standard"
+              selected={selected}
+              indented
+              startIcon={<span className="WinUI-icon CircleRing" />}
+              // hintText="Hint"
+              onClick={() => setSelected(!selected)}
+            >
+              Text
+            </ListItem>
+          </Flyout>
         </div>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
