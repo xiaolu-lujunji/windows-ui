@@ -1,13 +1,9 @@
-import type { NextPage } from "next";
-import React from "react";
-import Head from "next/head";
-import Image from "next/image";
-import Divider from "win-ui/divider";
-import Flyout from "win-ui/flyout";
-import List from "win-ui/list";
-import MenuList from "win-ui/menu-list";
-import MenuItem from "win-ui/menu-item";
-import styles from "../styles/Home.module.css";
+import type { NextPage } from 'next';
+import React from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
+import Button from 'win-ui/button';
+import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
   const list = React.useRef(null);
@@ -23,12 +19,12 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <div
           style={{
-            display: "flex",
-            justifyContent: "space-around",
-            width: "100%",
+            display: 'flex',
+            justifyContent: 'space-around',
+            width: '100%',
           }}
         >
-          <MenuList ref={list}>
+          {/* <MenuList ref={list}>
             <MenuItem
               variant="standard"
               selected={selectedIndex === 0}
@@ -39,45 +35,32 @@ const Home: NextPage = () => {
             >
               Text
             </MenuItem>
-            <MenuItem
-              selected={selectedIndex === 1}
-              onClick={() => setSelectedIndex(1)}
-            >
+            <MenuItem selected={selectedIndex === 1} onClick={() => setSelectedIndex(1)}>
               Text
             </MenuItem>
-            <MenuItem
-              selected={selectedIndex === 2}
-              onClick={() => setSelectedIndex(2)}
-            >
+            <MenuItem selected={selectedIndex === 2} onClick={() => setSelectedIndex(2)}>
               Text
             </MenuItem>
-            <MenuItem
-              selected={selectedIndex === 3}
-              onClick={() => setSelectedIndex(3)}
-            >
+            <MenuItem selected={selectedIndex === 3} onClick={() => setSelectedIndex(3)}>
               Text
             </MenuItem>
-            <MenuItem
-              selected={selectedIndex === 4}
-              onClick={() => setSelectedIndex(4)}
-            >
+            <MenuItem selected={selectedIndex === 4} onClick={() => setSelectedIndex(4)}>
               Text
             </MenuItem>
-            <MenuItem
-              selected={selectedIndex === 5}
-              onClick={() => setSelectedIndex(5)}
-            >
+            <MenuItem selected={selectedIndex === 5} onClick={() => setSelectedIndex(5)}>
               Text
             </MenuItem>
-          </MenuList>
+          </MenuList> */}
+          <Button variant="accent" disabled>
+            Text
+          </Button>
         </div>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.tsx</code>
+          Get started by editing <code className={styles.code}>pages/index.tsx</code>
         </p>
 
         <div className={styles.grid}>
@@ -91,10 +74,7 @@ const Home: NextPage = () => {
             <p>Learn about Next.js in an interactive course with quizzes!</p>
           </a>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
+          <a href="https://github.com/vercel/next.js/tree/canary/examples" className={styles.card}>
             <h2>Examples &rarr;</h2>
             <p>Discover and deploy boilerplate example Next.js projects.</p>
           </a>
@@ -104,9 +84,7 @@ const Home: NextPage = () => {
             className={styles.card}
           >
             <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
+            <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
           </a>
         </div>
       </main>
@@ -117,7 +95,7 @@ const Home: NextPage = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{" "}
+          Powered by{' '}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
