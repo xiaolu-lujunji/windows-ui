@@ -1,5 +1,6 @@
 import React, { Children } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import Layout from './layout';
 
 import Button from 'win-ui/button';
 
@@ -14,7 +15,11 @@ export default {
 } as ComponentMeta<typeof Button>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = (args) => (
+  <Layout>
+    <Button {...args} />
+  </Layout>
+);
 
 export const Accent = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
