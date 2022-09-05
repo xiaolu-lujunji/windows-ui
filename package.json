@@ -6,7 +6,8 @@
     "build": "turbo run build",
     "test": "turbo run test",
     "lint": "turbo run lint",
-    "dev": "turbo run dev"
+    "dev": "turbo run dev",
+    "storybook": "turbo run storybook"
   },
   "devDependencies": {
     "turbo": "^1.4.3"
