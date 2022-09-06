@@ -19,13 +19,13 @@ export interface Palette {
   mode?: 'light' | 'dark';
 
   text: PaletteColor;
-  accentText?: PaletteColorPartial;
+  accentText: PaletteColor;
   textOnAccent: Omit<PaletteColor, 'tertiary'> & { selectedText?: string };
 
   controlFill: Omit<PaletteColor, 'primary'> & { default: string; inputActive?: string };
   controlAltFill?: Omit<PaletteColorPartial, 'primary'> & { quarternary?: string };
   controlStrongFill?: { default?: string; disabled?: string };
-  subtleFill?: Omit<PaletteColorPartial, 'primary'>;
+  subtleFill: Omit<PaletteColor, 'primary'>;
   controlOnImageFill?: Omit<PaletteColorPartial, 'primary'> & {
     default?: string;
   };
@@ -95,7 +95,12 @@ export default function createPalette(): Palette {
 
       disabled: 'rgba(0, 0, 0, 0.3614)',
     },
-
+    accentText: {
+      primary: '#003e92',
+      secondary: '#001a68',
+      tertiary: '#005fb8',
+      disabled: 'rgba(0, 0, 0, 0.3614)',
+    },
     textOnAccent: {
       primary: '#ffffff',
       secondary: 'rgba(255, 255, 255, 0.7)',
@@ -107,6 +112,10 @@ export default function createPalette(): Palette {
       secondary: 'rgba(249, 249, 249, 0.5)',
       tertiary: 'rgba(249, 249, 249, 0.3)',
       disabled: 'rgba(249, 249, 249, 0.3)',
+    },
+    subtleFill: {
+      secondary: 'rgba(0, 0, 0, 0.0373)',
+      tertiary: 'rgba(0, 0, 0, 0.0241)',
     },
     accentFill: {
       default: '#005fb8',
