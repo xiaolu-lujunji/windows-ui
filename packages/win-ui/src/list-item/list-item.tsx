@@ -190,6 +190,7 @@ export interface ListItemProps extends React.ButtonHTMLAttributes<HTMLButtonElem
   selected?: boolean;
   /**
    * The select type to use.
+   * @default 'standard'
    */
   selectType?: 'standard' | 'radio' | 'check';
   /**
@@ -221,7 +222,7 @@ export interface ListItemProps extends React.ButtonHTMLAttributes<HTMLButtonElem
 const ListItem = React.forwardRef<HTMLButtonElement, ListItemProps>(function (props, ref) {
   const {
     selected = false,
-    selectType,
+    selectType = 'standard',
     indented = false,
     cascading = false,
     autoFocus = false,
