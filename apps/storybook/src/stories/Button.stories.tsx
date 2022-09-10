@@ -1,8 +1,7 @@
-import React, { Children } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Layout from './layout';
 
-import Button from 'win-ui/Button';
+import Button from 'win-ui/button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
