@@ -11,14 +11,18 @@ const ToolBarRoot = styled('div')({
   display: 'flex',
   justifyContent: 'flex-end',
   alignItems: 'center',
+  padding: 10,
 });
 
-const ContentRoot = styled('div')({
+const ContentRoot = styled('div')(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  flex: 1,
-});
+  height: 240,
+  ...(theme.palette.mode === 'light' && {
+    backgroundColor: '#fafafa',
+  }),
+}));
 
 export default function Layout(props: { children?: React.ReactNode }) {
   const [zoom, setZoom] = React.useState(false);
