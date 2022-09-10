@@ -12,6 +12,7 @@
   "devDependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "@mui/material": "^5.10.4",
     "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
     "react": "^18.2.0",
@@ -20,14 +21,13 @@
   "peerDependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "@mui/material": "^5.10.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "dependencies": {
     "@babel/core": "^7.18.13",
-    "@mui/base": "5.0.0-alpha.95",
-    "@mui/system": "^5.10.3",
-    "@mui/utils": "^5.10.3",
+    "@mui/system": "^5.10.4",
     "clsx": "^1.2.1"
   }
 }

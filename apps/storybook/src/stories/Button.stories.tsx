@@ -2,7 +2,7 @@ import React, { Children } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Layout from './layout';
 
-import Button from 'win-ui/button';
+import Button from 'win-ui/Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -25,6 +25,7 @@ export const Accent = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Accent.args = {
   variant: 'accent',
+  disableRipple: true,
   disabled: false,
   children: 'Text',
 };

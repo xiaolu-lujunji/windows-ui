@@ -1,5 +1,5 @@
-import { createStyled, shouldForwardProp } from '@mui/system';
-import defaultTheme from './default-theme';
+import createStyled, { shouldForwardProp } from '@mui/system/createStyled';
+import defaultTheme from './defaultTheme';
 
 export const rootShouldForwardProp = (prop: PropertyKey) =>
   shouldForwardProp(prop) && prop !== 'classes';
