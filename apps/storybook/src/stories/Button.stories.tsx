@@ -1,7 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Layout from './layout';
-
-import Button from 'win-ui/button';
+import Button from '@mui/material/Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -20,11 +19,10 @@ const Template: ComponentStory<typeof Button> = (args) => (
   </Layout>
 );
 
-export const Accent = Template.bind({});
+export const Contained = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Accent.args = {
+Contained.args = {
   variant: 'accent',
-  disableRipple: true,
   disabled: false,
   children: 'Text',
 };

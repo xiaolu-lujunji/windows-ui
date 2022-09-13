@@ -1,8 +1,9 @@
 import ToggleButtonBase, { toggleButtonClasses } from '@mui/material/ToggleButton';
-import styled from '../styles/styled';
+import styled, { rootShouldForwardProp } from '../styles/styled';
 export type { ToggleButtonProps } from '@mui/material/ToggleButton';
 
 const ToggleButton = styled(ToggleButtonBase, {
+  shouldForwardProp: (prop) => rootShouldForwardProp(prop) || prop === 'classes',
   name: 'WinUIToggleButton',
   slot: 'Root',
   overridesResolver: (props, styles) => [styles.root],

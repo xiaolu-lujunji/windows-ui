@@ -1,9 +1,10 @@
 import React from 'react';
-import clsx from 'clsx';
-import styled from '../styles/styled';
+import Button from '@mui/material/Button';
+import styled, { rootShouldForwardProp } from '../styles/styled';
 
-const LinkButtonRoot = styled('a', {
-  name: 'LinkButton',
+const LinkButtonRoot = styled(Button, {
+  shouldForwardProp: (prop) => rootShouldForwardProp(prop) || prop === 'classes',
+  name: 'WinUILinkButton',
   slot: 'Root',
 })(({ theme }) => ({
   padding: '4px 11px 6px',

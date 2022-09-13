@@ -1,106 +1,106 @@
 import createTheme from '@mui/material/styles/createTheme';
 import type { PaletteMode } from '@mui/material';
 
-declare module '@mui/material/styles/createTheme' {
-  interface ThemeOptions {
-    winUI?: {
-      palette?: {
-        mode?: PaletteMode;
-        text?: {
-          primary?: string;
-          secondary?: string;
-          disabled?: string;
-        };
-        accentText?: {
-          primary?: string;
-          secondary?: string;
-          tertiary?: string;
-          disabled?: string;
-        };
-        textOnAccent?: {
-          primary?: string;
-          secondary?: string;
-          disabled?: string;
-        };
-        controlFill?: {
-          default?: string;
-          secondary?: string;
-          tertiary?: string;
-          disabled?: string;
-        };
-        subtleFill?: {
-          secondary?: string;
-          tertiary?: string;
-        };
-        accentFill?: {
-          default?: string;
-          secondary?: string;
-          tertiary?: string;
-          disabled?: string;
-        };
-        controlStroke?: {
-          default?: string;
-          onAccentDefault?: string;
-        };
-        focusStroke?: {
-          outer?: string;
-        };
-      };
-      typography?: {
-        body?: {};
-      };
-    };
-  }
-  interface Theme {
-    winUI: {
-      palette: {
-        mode: PaletteMode;
-        text: {
-          primary: string;
-          secondary: string;
-          disabled: string;
-        };
-        accentText: {
-          primary: string;
-          secondary: string;
-          tertiary: string;
-          disabled: string;
-        };
-        textOnAccent: {
-          primary: string;
-          secondary: string;
-          disabled: string;
-        };
-        controlFill: {
-          default: string;
-          secondary: string;
-          tertiary: string;
-          disabled: string;
-        };
-        subtleFill: {
-          secondary: string;
-          tertiary: string;
-        };
-        accentFill: {
-          default: string;
-          secondary: string;
-          tertiary: string;
-          disabled: string;
-        };
-        controlStroke: {
-          default: string;
-          onAccentDefault: string;
-        };
-        focusStroke: {
-          outer: string;
-        };
-      };
-      typography: {
-        body: {};
-      };
-    };
-  }
-}
+// declare module '@mui/material/styles/createTheme' {
+//   interface ThemeOptions {
+//     winUI?: {
+//       palette?: {
+//         mode?: PaletteMode;
+//         text?: {
+//           primary?: string;
+//           secondary?: string;
+//           disabled?: string;
+//         };
+//         accentText?: {
+//           primary?: string;
+//           secondary?: string;
+//           tertiary?: string;
+//           disabled?: string;
+//         };
+//         textOnAccent?: {
+//           primary?: string;
+//           secondary?: string;
+//           disabled?: string;
+//         };
+//         controlFill?: {
+//           default?: string;
+//           secondary?: string;
+//           tertiary?: string;
+//           disabled?: string;
+//         };
+//         subtleFill?: {
+//           secondary?: string;
+//           tertiary?: string;
+//         };
+//         accentFill?: {
+//           default?: string;
+//           secondary?: string;
+//           tertiary?: string;
+//           disabled?: string;
+//         };
+//         controlStroke?: {
+//           default?: string;
+//           onAccentDefault?: string;
+//         };
+//         focusStroke?: {
+//           outer?: string;
+//         };
+//       };
+//       typography?: {
+//         body?: {};
+//       };
+//     };
+//   }
+//   interface Theme {
+//     winUI: {
+//       palette: {
+//         mode: PaletteMode;
+//         text: {
+//           primary: string;
+//           secondary: string;
+//           disabled: string;
+//         };
+//         accentText: {
+//           primary: string;
+//           secondary: string;
+//           tertiary: string;
+//           disabled: string;
+//         };
+//         textOnAccent: {
+//           primary: string;
+//           secondary: string;
+//           disabled: string;
+//         };
+//         controlFill: {
+//           default: string;
+//           secondary: string;
+//           tertiary: string;
+//           disabled: string;
+//         };
+//         subtleFill: {
+//           secondary: string;
+//           tertiary: string;
+//         };
+//         accentFill: {
+//           default: string;
+//           secondary: string;
+//           tertiary: string;
+//           disabled: string;
+//         };
+//         controlStroke: {
+//           default: string;
+//           onAccentDefault: string;
+//         };
+//         focusStroke: {
+//           outer: string;
+//         };
+//       };
+//       typography: {
+//         body: {};
+//       };
+//     };
+//   }
+// }
 
 const defaultTheme = createTheme({
   winUI: {
@@ -151,6 +151,13 @@ const defaultTheme = createTheme({
         fontFamily: 'Segoe UI Variable',
         fontSize: 14,
         lineHeight: '20px',
+      },
+    },
+  },
+  components: {
+    WinUIButton: {
+      defaultProps: {
+        disableRipple: true,
       },
     },
   },

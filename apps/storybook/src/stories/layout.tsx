@@ -1,6 +1,37 @@
 import React from 'react';
+import ThemeProvider from '@mui/material/styles/ThemeProvider';
+import createTheme from '@mui/material/styles/createTheme';
+import components from 'win-ui/styles/components';
+import { lightThemeColors } from 'win-ui/styles/colors';
+import typography from 'win-ui/styles/typography';
 import styled from 'win-ui/styles/styled';
-import ToggleButton from 'win-ui/toggle-button';
+import ToggleButton from '@mui/material/ToggleButton';
+import type { Colors } from 'win-ui/styles/colors';
+import type { Typography } from 'win-ui/styles/typography';
+
+declare module '@mui/material/styles/createTheme' {
+  interface ThemeOptions {
+    winUI: {
+      colors: Colors;
+      typography: Typography;
+    };
+  }
+
+  interface Theme {
+    winUI: {
+      colors: Colors;
+      typography: Typography;
+    };
+  }
+}
+
+const defaultTheme = createTheme({
+  components,
+  winUI: {
+    colors: lightThemeColors,
+    typography,
+  },
+});
 
 const LayoutRoot = styled('div')({
   display: 'flex',
@@ -27,13 +58,15 @@ const ContentRoot = styled('div')(({ theme }) => ({
 export default function Layout(props: { children?: React.ReactNode }) {
   const [zoom, setZoom] = React.useState(false);
   return (
-    <LayoutRoot>
-      <ToolBarRoot>
-        <ToggleButton selected={!zoom} onClick={() => setZoom(!zoom)}>
-          {zoom ? '重置' : '500%'}
-        </ToggleButton>
-      </ToolBarRoot>
-      <ContentRoot style={{ zoom: zoom ? 5 : 1 }}>{props.children}</ContentRoot>
-    </LayoutRoot>
+    <ThemeProvider theme={defaultTheme}>
+      <LayoutRoot>
+        <ToolBarRoot>
+          <ToggleButton value="zoom" selected={!zoom} onClick={() => setZoom(!zoom)}>
+            {zoom ? '重置' : '500%'}
+          </ToggleButton>
+        </ToolBarRoot>
+        <ContentRoot style={{ zoom: zoom ? 5 : 1 }}>{props.children}</ContentRoot>
+      </LayoutRoot>
+    </ThemeProvider>
   );
 }
