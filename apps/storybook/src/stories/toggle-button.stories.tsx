@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Layout from './layout';
 
-import ToggleButton from 'win-ui/toggle-button';
+import ToggleButton from '@mui/material/ToggleButton';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

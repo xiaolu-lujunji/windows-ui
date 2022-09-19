@@ -1,5 +1,6 @@
-import type { Components } from '@mui/material/styles/components';
 import { buttonClasses } from '@mui/material/Button';
+import { toggleButtonClasses } from '@mui/material/ToggleButton';
+import type { Components, Theme } from '@mui/material/styles';
 
 declare module '@mui/material/Button' {
   interface ButtonPropsVariantOverrides {
@@ -8,7 +9,7 @@ declare module '@mui/material/Button' {
   }
 }
 
-const components: Components = {
+const components: Components<Theme> = {
   MuiButton: {
     defaultProps: {
       disableRipple: true,
@@ -74,6 +75,50 @@ const components: Components = {
         }),
       },
     ],
+  },
+  MuiToggleButton: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        padding: '5px 12px',
+        // TODO: how to implement gradient rounded corners border?
+        borderColor: 'transparent',
+        ...theme.winUI.typography.body,
+        textTransform: 'none',
+        // TODO: how to apply focus visible styles?
+        color: theme.winUI.colors.text.primary,
+        backgroundColor: theme.winUI.colors.controlFill.default,
+        '&:hover': {
+          backgroundColor: theme.winUI.colors.controlFill.secondary,
+        },
+        '&:active': {
+          color: theme.winUI.colors.text.secondary,
+          backgroundColor: theme.winUI.colors.controlFill.tertiary,
+          borderColor: theme.winUI.colors.controlStroke.default,
+        },
+        [`&.${toggleButtonClasses.disabled}`]: {
+          color: theme.winUI.colors.text.disabled,
+          backgroundColor: theme.winUI.colors.controlFill.disabled,
+          borderColor: theme.winUI.colors.controlStroke.default,
+        },
+        [`&.${toggleButtonClasses.selected}`]: {
+          color: theme.winUI.colors.textOnAccent.primary,
+          backgroundColor: theme.winUI.colors.accentFill.default,
+          '&:hover': {
+            backgroundColor: theme.winUI.colors.accentFill.secondary,
+          },
+          '&:active': {
+            color: theme.winUI.colors.textOnAccent.secondary,
+            backgroundColor: theme.winUI.colors.accentFill.tertiary,
+            borderColor: theme.winUI.colors.controlStroke.onAccentDefault,
+          },
+          [`&.${toggleButtonClasses.disabled}`]: {
+            color: theme.winUI.colors.textOnAccent.disabled,
+            backgroundColor: theme.winUI.colors.accentFill.disabled,
+            borderColor: 'transparent',
+          },
+        },
+      }),
+    },
   },
 };
 
