@@ -1,4 +1,4 @@
-import noiseAsset256 from './Noise_Asset_256.png';
+import noiseAsset256 from './NoiseAsset_256.png';
 import type { WinUIPalette } from './createWinUIPalette';
 
 const lightThemeColors: WinUIPalette = {
@@ -19,13 +19,13 @@ const lightThemeColors: WinUIPalette = {
   textOnAccent: {
     primary: 'rgba(255, 255, 255, 1)',
     secondary: 'rgba(255, 255, 255, 0.7)',
-    disabled: 'rgba(255, 255, 255, 0.7)',
+    disabled: '#fff',
     selectedText: 'rgba(255, 255, 255, 1)',
   },
 
   controlFill: {
     default: 'rgba(255, 255, 255, 0.7)',
-    secondary: 'rgba(249, 249, 249, 0.5)',
+    secondary: 'rgba(249, 249, 249, 0.6)',
     tertiary: 'rgba(249, 249, 249, 0.3)',
     disabled: 'rgba(249, 249, 249, 0.3)',
     transparent: 'rgba(255, 255, 255, 0)',

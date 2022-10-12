@@ -1,4 +1,4 @@
-import noiseAsset256 from './Noise_Asset_256.png';
+import noiseAsset256 from './NoiseAsset_256.png';
 import type { WinUIPalette } from './createWinUIPalette';
 
 const darkThemeColors: WinUIPalette = {
@@ -19,7 +19,7 @@ const darkThemeColors: WinUIPalette = {
   textOnAccent: {
     primary: 'rgba(0, 0, 0, 1)',
     secondary: 'rgba(0, 0, 0, 0.5)',
-    disabled: 'rgba(0, 0, 0, 0.5)',
+    disabled: 'rgba(255, 255, 255, 0.5302)',
     selectedText: 'rgba(255, 255, 255, 1)',
   },
 

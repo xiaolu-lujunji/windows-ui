@@ -1,10 +1,26 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Layout from './layout';
-import Button from '@mui/material/Button';
+import ThemeProvider from '@mui/material/styles/ThemeProvider';
+import CssBaseline from '@Mui/material/CssBaseline';
+import Button, { MuiButton } from 'win-ui/Button';
+import { MuiCssBaseline } from 'win-ui/CssBaseline';
+import createTheme from 'win-ui/styles/createTheme';
+import createWinUIPalette from 'win-ui/styles/createWinUIPalette';
+import createWinUITypography from 'win-ui/styles/createTypography';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
+
+const theme = createTheme({
+  components: {
+    MuiButton,
+    MuiCssBaseline,
+  },
+  winUI: {
+    palette: createWinUIPalette('dark'),
+    typography: createWinUITypography(),
+  },
+});
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
+  title: 'Button',
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   // argTypes: {
@@ -14,22 +30,26 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = (args) => (
-  <Layout>
-    <Button {...args} />
-  </Layout>
+  <ThemeProvider theme={theme}>
+    <CssBaseline>
+      <Button {...args} />
+    </CssBaseline>
+  </ThemeProvider>
 );
-
-export const Contained = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Contained.args = {
-  variant: 'accent',
-  disabled: false,
-  children: 'Text',
-};
 
 export const Standard = Template.bind({});
 Standard.args = {
   variant: 'standard',
+  disableRipple: true,
   disabled: false,
+  children: 'Text',
+};
+
+export const Accent = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+Accent.args = {
+  variant: 'accent',
+  disableRipple: true,
+  disabled: true,
   children: 'Text',
 };
