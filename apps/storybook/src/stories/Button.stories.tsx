@@ -13,7 +13,7 @@ const theme = createTheme({
     MuiCssBaseline,
   },
   winUI: {
-    palette: createWinUIPalette('dark'),
+    palette: createWinUIPalette('light'),
     typography: createWinUITypography(),
   },
 });
@@ -49,6 +49,15 @@ export const Accent = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Accent.args = {
   variant: 'accent',
+  disableRipple: true,
+  disabled: true,
+  children: 'Text',
+};
+
+export const Subtle = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+Subtle.args = {
+  variant: 'subtle',
   disableRipple: true,
   disabled: true,
   children: 'Text',

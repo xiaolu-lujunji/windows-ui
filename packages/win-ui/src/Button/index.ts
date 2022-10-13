@@ -6,6 +6,7 @@ declare module '@mui/material/Button' {
   interface ButtonPropsVariantOverrides {
     standard: true;
     accent: true;
+    subtle: true;
   }
 }
 
@@ -85,6 +86,27 @@ export const MuiButton: Components<Theme>['MuiButton'] = {
           '&:before': {
             background: 'transparent',
           },
+        },
+      }),
+    },
+    {
+      props: { variant: 'subtle' },
+      style: ({ theme }) => ({
+        minWidth: 120,
+        padding: '6px 10px',
+        backgroundColor: theme.winUI.palette.subtleFill.transparent,
+        ...theme.winUI.typography.body,
+        color: theme.winUI.palette.text.primary,
+        textTransform: 'none',
+        '&:hover': {
+          backgroundColor: theme.winUI.palette.subtleFill.secondary,
+        },
+        '&:active': {
+          color: theme.winUI.palette.text.secondary,
+          backgroundColor: theme.winUI.palette.subtleFill.tertiary,
+        },
+        [`&.${buttonClasses.disabled}`]: {
+          color: theme.winUI.palette.text.disabled,
         },
       }),
     },
