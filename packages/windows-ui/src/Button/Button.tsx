@@ -119,7 +119,7 @@ export interface ButtonProps extends ButtonUnstyledProps {
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function Button(props, ref) {
-  const { variant, children, ...other } = props;
+  const { variant = 'standard', children, ...other } = props;
 
   const ownerState = { variant };
 
