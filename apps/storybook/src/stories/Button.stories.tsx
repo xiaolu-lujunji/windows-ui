@@ -1,11 +1,13 @@
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import CssBaseline from '@Mui/material/CssBaseline';
+import Icon from '@mui/material/Icon';
 import Button, { MuiButton } from 'win-ui/Button';
 import { MuiCssBaseline } from 'win-ui/CssBaseline';
 import createTheme from 'win-ui/styles/createTheme';
 import createWinUIPalette from 'win-ui/styles/createWinUIPalette';
 import createWinUITypography from 'win-ui/styles/createTypography';
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import 'win-ui/segoe-fluent-icons.css';
 
 const theme = createTheme({
   components: {
@@ -52,6 +54,19 @@ Accent.args = {
   disableRipple: true,
   disabled: true,
   children: 'Text',
+};
+
+export const AccentIconBefore = Template.bind({});
+AccentIconBefore.args = {
+  variant: 'accent',
+  disableRipple: true,
+  disabled: false,
+  children: (
+    <>
+      <Icon baseClassName="segoe-fluent-icons" className="circle-ring" />
+      Text
+    </>
+  ),
 };
 
 export const Subtle = Template.bind({});
