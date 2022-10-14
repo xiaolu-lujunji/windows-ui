@@ -15,9 +15,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": ".",
     "paths": {
-      "win-ui/*": ["../../packages/win-ui/src/*"]
+      "windows-ui/*": ["../../packages/windows-ui/src/*"]
     }
   },
   "include": ["src"],

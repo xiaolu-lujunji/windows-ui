@@ -8,6 +8,7 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
+    'storybook-dark-mode',
   ],
   framework: '@storybook/react',
   core: {
@@ -22,7 +23,7 @@ module.exports = {
       // customize the Vite config here
       resolve: {
         alias: {
-          'win-ui': path.resolve(__dirname, '../../../packages/win-ui/src'),
+          'windows-ui': path.resolve(__dirname, '../../../packages/windows-ui/src'),
         },
       },
     });

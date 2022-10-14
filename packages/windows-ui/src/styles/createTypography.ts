@@ -1,8 +1,8 @@
-export interface WinUITypography {
+export interface Typography {
   body: React.CSSProperties;
 }
 
-export default function createWinUITypography(): WinUITypography {
+export default function createTypography(): Typography {
   return {
     body: {
       fontFamily: 'Segoe UI Variable',
