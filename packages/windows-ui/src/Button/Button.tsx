@@ -12,6 +12,9 @@ const ButtonRoot = styled(ButtonUnstyled, {
   };
 }>(({ theme, ownerState }) => ({
   position: 'relative',
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
   border: 'none',
   borderRadius: 4,
   ...(ownerState.variant === 'standard' && {
@@ -106,6 +109,22 @@ const ButtonRoot = styled(ButtonUnstyled, {
   }),
 }));
 
+const ButtonStartIcon = styled('span', {
+  name: 'WuiButton',
+  slot: 'StartIcon',
+})({
+  display: 'inherit',
+  marginRight: 8,
+});
+
+const ButtonEndIcon = styled('span', {
+  name: 'WuiButton',
+  slot: 'EndIcon',
+})({
+  display: 'inherit',
+  marginLeft: 8,
+});
+
 export interface ButtonProps extends ButtonUnstyledProps {
   /**
    * The variant to use.
@@ -113,19 +132,39 @@ export interface ButtonProps extends ButtonUnstyledProps {
    */
   variant: 'standard' | 'accent' | 'subtle';
   /**
+   * Element placed before the children.
+   */
+  startIcon?: React.ReactNode;
+  /**
+   * Element placed after the children.
+   */
+  endIcon?: React.ReactNode;
+  /**
    * The content of the component.
    */
   children?: React.ReactNode;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function Button(props, ref) {
-  const { variant = 'standard', children, ...other } = props;
+  const {
+    variant = 'standard',
+    startIcon: startIconProp,
+    endIcon: endIconProp,
+    children,
+    ...other
+  } = props;
 
   const ownerState = { variant };
 
+  const startIcon = startIconProp && <ButtonStartIcon>{startIconProp}</ButtonStartIcon>;
+
+  const endIcon = endIconProp && <ButtonEndIcon>{endIconProp}</ButtonEndIcon>;
+
   return (
     <ButtonRoot ownerState={ownerState} ref={ref} {...other}>
+      {startIcon}
       {children}
+      {endIcon}
     </ButtonRoot>
   );
 });
