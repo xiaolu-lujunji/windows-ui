@@ -9,6 +9,7 @@ const ButtonRoot = styled(ButtonUnstyled, {
 })<{
   ownerState: {
     variant: 'standard' | 'accent' | 'subtle';
+    size: 'standard' | 'compactTouch';
   };
 }>(({ theme, ownerState }) => ({
   position: 'relative',
@@ -18,8 +19,13 @@ const ButtonRoot = styled(ButtonUnstyled, {
   border: 'none',
   borderRadius: 4,
   ...(ownerState.variant === 'standard' && {
-    minWidth: 118,
-    padding: '5px 10px',
+    ...(ownerState.size === 'standard' && {
+      minWidth: 118,
+      padding: '5px 11px',
+    }),
+    ...(ownerState.size === 'compactTouch' && {
+      padding: '1px 11px',
+    }),
     margin: 1,
     backgroundColor: theme.palette.controlFill.default,
     ...theme.typography.body,
@@ -54,8 +60,13 @@ const ButtonRoot = styled(ButtonUnstyled, {
     },
   }),
   ...(ownerState.variant === 'accent' && {
-    minWidth: 120,
-    padding: '6px 10px',
+    ...(ownerState.size === 'standard' && {
+      minWidth: 120,
+      padding: '6px 11px',
+    }),
+    ...(ownerState.size === 'compactTouch' && {
+      padding: '1px 11px',
+    }),
     backgroundColor: theme.palette.accentFill.default,
     ...theme.typography.body,
     color: theme.palette.textOnAccent.primary,
@@ -89,8 +100,13 @@ const ButtonRoot = styled(ButtonUnstyled, {
     },
   }),
   ...(ownerState.variant === 'subtle' && {
-    minWidth: 120,
-    padding: '6px 10px',
+    ...(ownerState.size === 'standard' && {
+      minWidth: 120,
+      padding: '6px 11px',
+    }),
+    ...(ownerState.size === 'compactTouch' && {
+      padding: '1px 11px',
+    }),
     backgroundColor: theme.palette.subtleFill.transparent,
     ...theme.typography.body,
     color: theme.palette.text.primary,
@@ -140,6 +156,16 @@ export interface ButtonProps extends ButtonUnstyledProps {
    */
   endIcon?: React.ReactNode;
   /**
+   * The size of the component.
+   * @default 'standard'
+   */
+  size?: 'standard' | 'compactTouch';
+  /**
+   * If `true`, the component is disabled.
+   * @default false
+   */
+  disabled?: boolean;
+  /**
    * The content of the component.
    */
   children?: React.ReactNode;
@@ -150,11 +176,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     variant = 'standard',
     startIcon: startIconProp,
     endIcon: endIconProp,
+    size = 'standard',
     children,
     ...other
   } = props;
 
-  const ownerState = { variant };
+  const ownerState = { variant, size };
 
   const startIcon = startIconProp && <ButtonStartIcon>{startIconProp}</ButtonStartIcon>;
 
