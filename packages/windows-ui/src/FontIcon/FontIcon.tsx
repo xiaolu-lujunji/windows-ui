@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from '../styles/styled';
+import type { SxProps } from '@mui/system';
+import type { Theme } from '../styles/createTheme';
 
 const FontIconRoot = styled('span', {
   name: 'WuiFontIcon',
@@ -34,6 +36,10 @@ export interface FontIconProps {
    * @default 'standard'
    */
   fontSize?: 'inherit' | 'standard' | 'small';
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx?: SxProps<Theme>;
 }
 
 const FontIcon = React.forwardRef<HTMLSpanElement, FontIconProps>(function FontIcon(props, ref) {

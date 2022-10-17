@@ -2,6 +2,8 @@ import React from 'react';
 import Button from '../Button';
 import styled from '../styles/styled';
 import type { ButtonProps } from '../Button';
+import type { SxProps } from '@mui/system';
+import type { Theme } from '../styles/createTheme';
 
 const IconButtonRoot = styled(Button, {
   name: 'WuiIconButton',
@@ -41,6 +43,10 @@ export interface IconButtonProps extends Omit<ButtonProps, 'startIcon' | 'endIco
    * @default false
    */
   disabled?: boolean;
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx?: SxProps<Theme>;
   /**
    * The content of the component.
    */

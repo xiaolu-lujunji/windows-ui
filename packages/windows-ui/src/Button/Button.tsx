@@ -2,6 +2,8 @@ import React from 'react';
 import ButtonUnstyled, { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
 import styled from '../styles/styled';
 import type { ButtonUnstyledProps } from '@mui/base/ButtonUnstyled';
+import type { SxProps } from '@mui/system';
+import type { Theme } from '../styles/createTheme';
 
 const ButtonRoot = styled(ButtonUnstyled, {
   name: 'WuiButton',
@@ -165,6 +167,10 @@ export interface ButtonProps extends ButtonUnstyledProps {
    * @default false
    */
   disabled?: boolean;
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx?: SxProps<Theme>;
   /**
    * The content of the component.
    */

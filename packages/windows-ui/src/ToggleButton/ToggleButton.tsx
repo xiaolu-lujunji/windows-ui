@@ -2,6 +2,8 @@ import React from 'react';
 import Button from '../Button';
 import IconButton from '../IconButton';
 import type { ButtonUnstyledProps } from '@mui/base/ButtonUnstyled';
+import type { SxProps } from '@mui/system';
+import type { Theme } from '../styles/createTheme';
 
 export interface ToggleButtonProps extends ButtonUnstyledProps {
   /**
@@ -29,6 +31,10 @@ export interface ToggleButtonProps extends ButtonUnstyledProps {
    * @default 'standard'
    */
   size?: 'standard' | 'compactTouch';
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx?: SxProps<Theme>;
   /**
    * The content of the component.
    */
