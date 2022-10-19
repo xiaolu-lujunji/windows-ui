@@ -1,3 +1,3 @@
 export { default } from './Link';
-export { linkClasses } from './linkClasses';
+export { default as linkClasses } from './linkClasses';
 export type { LinkProps } from './Link';

@@ -29,7 +29,7 @@ const FontIconRoot = styled('span', {
   }),
 );
 
-export interface FontIconProps {
+export interface FontIconProps extends Omit<React.HTMLAttributes<HTMLSpanElement>, 'children'> {
   unicode: string;
   /**
    * The fontSize applied to the icon. Defaults to 16px, but can be configure to inherit font size.

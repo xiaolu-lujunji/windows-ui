@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '../styles/styled';
-import { linkClasses } from './linkClasses';
+import linkClasses from './linkClasses';
 import useUtilityClasses from './useUtilityClasses';
 import clsx from 'clsx';
 import type { SxProps } from '@mui/system';

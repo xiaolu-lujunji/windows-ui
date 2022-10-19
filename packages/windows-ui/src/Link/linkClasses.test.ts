@@ -1,4 +1,4 @@
-import { linkClasses, getLinkUtilityClass } from './linkClasses';
+import linkClasses, { getLinkUtilityClass } from './linkClasses';
 
 describe('linkClasses', () => {
   test('linkClasses.disabled', () => {
