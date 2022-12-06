@@ -1,5 +1,5 @@
 {
-  "name": "windows-ui-monorepo",
+  "name": "@wui/monorepo",
   "description": "Implements Microsoft's Windows UI Library in React.",
   "license": "MIT",
   "scripts": {

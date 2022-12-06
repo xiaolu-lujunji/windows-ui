@@ -1,0 +1,14 @@
+.wui-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wui-button.standard {
+}
+
+.wui-button.accent {
+}
+
+.wui-button.subtle {
+}
