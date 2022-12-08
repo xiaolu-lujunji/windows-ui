@@ -5,9 +5,11 @@ import '@wui/core/themes/light.scss'
 
 describe('button', () => {
   it('accent', () => {
-    // Screenshot a full page
-    // cy.argosScreenshot('home');
-    cy.mount(<Button>Text</Button>)
+    cy.viewport(800, 600)
+
+    cy.mount(<Button style={{ transform: 'scale(4)' }}>Text</Button>)
+
+    // cy.get('button').
 
     // match element snapshot
     cy.get('button').matchImageSnapshot()

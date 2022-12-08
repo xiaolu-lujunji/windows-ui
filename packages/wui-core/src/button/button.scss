@@ -10,6 +10,20 @@
   border: none;
 }
 
+.wui-elevation {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0px;
+    padding: 1px;
+    border-radius: 4px;
+    -webkit-mask-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
+    -webkit-mask-clip: content-box, border-box;
+    -webkit-mask-composite: xor;
+  }
+}
+
 .wui-button.accent {
   color: var(--fill-color-textOnAccent-primary);
   background-color: var(--fill-color-accent-default);

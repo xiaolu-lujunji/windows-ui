@@ -2,3 +2,7 @@
   --fill-color-accent-default: #005fb8;
   --fill-color-textOnAccent-primary: #ffffff;
 }
+
+.wui-elevation-accentControl-border::before {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 90.67%, rgba(0, 0, 0, 0.4) 100%);
+}
