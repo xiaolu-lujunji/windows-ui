@@ -1,6 +1,14 @@
 :root {
   --fill-color-accent-default: #005fb8;
+  --fill-color-accent-secondary: rgba(0, 95, 184, 0.9);
+  --fill-color-accent-tertiary: rgba(0, 95, 184, 0.8);
+  --fill-color-accent-disabled: rgba(0, 0, 0, 0.2169);
+
   --fill-color-textOnAccent-primary: #ffffff;
+  --fill-color-textOnAccent-secondary: rgba(255, 255, 255, 0.7);
+  --fill-color-textOnAccent-disabled: #ffffff;
+
+  --stroke-color-controlStroke-onAccentDefault: rgba(255, 255, 255, 0.08);
 }
 
 .wui-elevation-accentControl-border::before {

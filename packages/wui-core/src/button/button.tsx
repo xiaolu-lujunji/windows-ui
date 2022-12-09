@@ -3,22 +3,24 @@ import clsx from 'clsx'
 
 export interface ButtonProps {
   variant?: 'accent' | 'standard'
+  disabled?: boolean
   style?: React.CSSProperties
   className?: string
   children?: React.ReactNode
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(props, ref) {
-  const { variant = 'accent', className, children, ...other } = props
+  const { variant = 'accent', disabled = false, className, children, ...other } = props
 
   return (
     <button
+      disabled={disabled}
       className={clsx(
         'wui-button',
         variant,
         'wui-typography-body',
-        'wui-elevation',
-        'wui-elevation-accentControl-border',
+        !disabled && 'wui-elevation',
+        !disabled && 'wui-elevation-accentControl-border',
         className
       )}
       ref={ref}

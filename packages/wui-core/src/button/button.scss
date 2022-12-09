@@ -8,6 +8,14 @@
   background-color: transparent;
   border-radius: 4px;
   border: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
 }
 
 .wui-elevation {
@@ -27,4 +35,22 @@
 .wui-button.accent {
   color: var(--fill-color-textOnAccent-primary);
   background-color: var(--fill-color-accent-default);
+
+  &:hover {
+    background-color: var(--fill-color-accent-secondary);
+  }
+
+  &:active {
+    color: var(--fill-color-textOnAccent-secondary);
+    background-color: var(--fill-color-accent-tertiary);
+
+    &::before {
+      background: var(--stroke-color-controlStroke-onAccentDefault);
+    }
+  }
+
+  &:disabled {
+    color: var(--fill-color-textOnAccent-disabled);
+    background-color: var(--fill-color-accent-disabled);
+  }
 }

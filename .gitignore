@@ -21,3 +21,6 @@ node_modules/
 
 # turborepo
 .turbo
+
+# cypress
+__diff_output__
