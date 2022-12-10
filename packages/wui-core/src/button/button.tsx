@@ -4,7 +4,7 @@ import clsx from 'clsx'
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
    * The variant to use.
-   * @default 'text'
+   * @default 'accent'
    */
   variant?: 'accent' | 'standard'
 }

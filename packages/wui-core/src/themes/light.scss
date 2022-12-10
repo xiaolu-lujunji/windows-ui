@@ -9,6 +9,9 @@
   --fill-color-control-tertiary: rgba(249, 249, 249, 0.3);
   --fill-color-control-disabled: rgba(249, 249, 249, 0.3);
 
+  --fill-color-subtle-secondary: rgba(0, 0, 0, 0.0373);
+  --fill-color-subtle-tertiary: rgba(0, 0, 0, 0.0241);
+
   --fill-color-text-primary: rgba(0, 0, 0, 0.8956);
   --fill-color-text-secondary: rgba(0, 0, 0, 0.6063);
   --fill-color-text-disabled: rgba(0, 0, 0, 0.3614);
@@ -16,6 +19,11 @@
   --fill-color-textOnAccent-primary: #ffffff;
   --fill-color-textOnAccent-secondary: rgba(255, 255, 255, 0.7);
   --fill-color-textOnAccent-disabled: #ffffff;
+
+  --fill-color-accentText-primary: #003e92;
+  --fill-color-accentText-secondary: #001a68;
+  --fill-color-accentText-tertiary: #005fb8;
+  --fill-color-accentText-disabled: rgba(0, 0, 0, 0.3614);
 
   --stroke-color-controlStroke-default: rgba(0, 0, 0, 0.0578);
   --stroke-color-controlStroke-onAccentDefault: rgba(255, 255, 255, 0.08);

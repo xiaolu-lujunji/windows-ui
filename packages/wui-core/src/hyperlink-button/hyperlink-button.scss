@@ -1,0 +1,25 @@
+.wui-hyperlink-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 49px;
+  height: 32px;
+  border-radius: 3px;
+  color: var(--fill-color-accentText-primary);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--fill-color-accentText-secondary);
+    background-color: var(--fill-color-subtle-secondary);
+  }
+
+  &:active {
+    color: var(--fill-color-accentText-tertiary);
+    background-color: var(--fill-color-subtle-tertiary);
+  }
+
+  &.wui-disabled {
+    color: var(--fill-color-accentText-disabled);
+    background-color: transparent;
+  }
+}
