@@ -43,3 +43,12 @@
   outline: 2px solid var(--stroke-color-focusStroke-outer);
   outline-offset: 1px;
 }
+
+.wui-flyout {
+  border: 1px solid rgba(0, 0, 0, 0.0578);
+  border-radius: 7px;
+  filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.14));
+  background: url('./NoiseAsset_256.png'), rgba(252, 252, 252, 0.85);
+  background-blend-mode: normal, luminosity;
+  backdrop-filter: blur(30px);
+}
