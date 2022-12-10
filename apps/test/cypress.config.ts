@@ -19,6 +19,41 @@ function ensureRdpPort(args) {
   return port
 }
 
+async function activatePseudoClass(pseudoClass: string, selector: string) {
+  debug(`activate ${pseudoClass} pseudo`)
+
+  client =
+    client ||
+    (await CDP({
+      port,
+    }))
+
+  await client.DOM.enable()
+  await client.CSS.enable()
+
+  // as the Window consists of two IFrames, we must retrieve the right one
+  const allRootNodes = await client.DOM.getFlattenedDocument()
+
+  const isIframe = (node) => {
+    return node.nodeName === 'IFRAME' && node.contentDocument
+  }
+
+  const filtered = allRootNodes.nodes.filter(isIframe)
+
+  // The first IFrame is our App
+  const root = filtered[0].contentDocument
+
+  const { nodeId } = await client.DOM.querySelector({
+    nodeId: root.nodeId,
+    selector,
+  })
+
+  return client.CSS.forcePseudoState({
+    nodeId,
+    forcedPseudoClasses: [pseudoClass],
+  })
+}
+
 let port = 0
 let client: CDP.Client | null = null
 
@@ -66,72 +101,13 @@ export default defineConfig({
           })
         },
         activateHoverPseudo: async ({ selector }) => {
-          debug('activateHoverPseudo')
-
-          client =
-            client ||
-            (await CDP({
-              port,
-            }))
-
-          await client.DOM.enable()
-          await client.CSS.enable()
-
-          // as the Window consists of two IFrames, we must retrieve the right one
-          const allRootNodes = await client.DOM.getFlattenedDocument()
-
-          const isIframe = (node) => {
-            return node.nodeName === 'IFRAME' && node.contentDocument
-          }
-
-          const filtered = allRootNodes.nodes.filter(isIframe)
-
-          // The first IFrame is our App
-          const root = filtered[0].contentDocument
-
-          const { nodeId } = await client.DOM.querySelector({
-            nodeId: root.nodeId,
-            selector,
-          })
-
-          return client.CSS.forcePseudoState({
-            nodeId,
-            forcedPseudoClasses: ['hover'],
-          })
+          return activatePseudoClass('hover', selector)
         },
         activateActivePseudo: async ({ selector }) => {
-          debug('activateActivePseudo')
-
-          client =
-            client ||
-            (await CDP({
-              port,
-            }))
-
-          await client.DOM.enable()
-          await client.CSS.enable()
-
-          // as the Window consists of two IFrames, we must retrieve the right one
-          const allRootNodes = await client.DOM.getFlattenedDocument()
-
-          const isIframe = (node) => {
-            return node.nodeName === 'IFRAME' && node.contentDocument
-          }
-
-          const filtered = allRootNodes.nodes.filter(isIframe)
-
-          // The first IFrame is our App
-          const root = filtered[0].contentDocument
-
-          const { nodeId } = await client.DOM.querySelector({
-            nodeId: root.nodeId,
-            selector,
-          })
-
-          return client.CSS.forcePseudoState({
-            nodeId,
-            forcedPseudoClasses: ['active'],
-          })
+          return activatePseudoClass('active', selector)
+        },
+        activateFocusVisiblePseudo: async ({ selector }) => {
+          return activatePseudoClass('focus-visible', selector)
         },
       })
     },

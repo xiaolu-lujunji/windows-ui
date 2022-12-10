@@ -12,10 +12,6 @@
   &:focus {
     outline: none;
   }
-
-  &:focus-visible {
-    outline: none;
-  }
 }
 
 .wui-elevation {
@@ -52,5 +48,29 @@
   &:disabled {
     color: var(--fill-color-textOnAccent-disabled);
     background-color: var(--fill-color-accent-disabled);
+  }
+}
+
+.wui-button.standard {
+  color: var(--fill-color-text-primary);
+  background-color: var(--fill-color-control-default);
+
+  &:hover {
+    background-color: var(--fill-color-control-secondary);
+  }
+
+  &:active {
+    color: var(--fill-color-text-secondary);
+    background-color: var(--fill-color-control-tertiary);
+
+    &::before {
+      background: var(--stroke-color-controlStroke-default);
+    }
+  }
+
+  &:disabled {
+    color: var(--fill-color-text-disabled);
+    background-color: var(--fill-color-control-disabled);
+    border: 1px solid var(--stroke-color-controlStroke-default);
   }
 }

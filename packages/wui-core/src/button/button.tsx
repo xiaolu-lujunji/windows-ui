@@ -1,12 +1,12 @@
 import { forwardRef } from 'react'
 import clsx from 'clsx'
 
-export interface ButtonProps {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  /**
+   * The variant to use.
+   * @default 'text'
+   */
   variant?: 'accent' | 'standard'
-  disabled?: boolean
-  style?: React.CSSProperties
-  className?: string
-  children?: React.ReactNode
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(props, ref) {
@@ -20,7 +20,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(props,
         variant,
         'wui-typography-body',
         !disabled && 'wui-elevation',
-        !disabled && 'wui-elevation-accentControl-border',
+        !disabled && {
+          'wui-elevation-accentControl-border': variant === 'accent',
+          'wui-elevation-control-border': variant === 'standard',
+        },
+        'wui-focus-stroke',
         className
       )}
       ref={ref}
