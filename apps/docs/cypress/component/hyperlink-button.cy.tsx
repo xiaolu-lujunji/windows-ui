@@ -1,7 +1,5 @@
 import HyperlinkButton from '@wui/core/hyperlink-button'
 import '@wui/core/hyperlink-button/hyperlink-button.scss'
-import '@wui/core/typography/typography.scss'
-import '@wui/core/themes/light.scss'
 
 describe('hyperlink-button', () => {
   beforeEach(() => {

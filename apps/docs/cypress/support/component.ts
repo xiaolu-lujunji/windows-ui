@@ -37,3 +37,6 @@ Cypress.Commands.add('mount', mount)
 
 // Example use:
 // cy.mount(<MyComponent />)
+
+import '@wui/core/themes/light.scss'
+import '@wui/core/typography/typography.scss'

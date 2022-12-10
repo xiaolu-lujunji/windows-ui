@@ -1,0 +1,23 @@
+.wui-hyperlink {
+  font-family: 'Segoe UI Variable Static Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--fill-color-accentText-primary);
+
+  &:hover {
+    color: var(--fill-color-accentText-secondary);
+    text-decoration: none;
+  }
+
+  &:active {
+    color: var(--fill-color-accentText-tertiary);
+    text-decoration: none;
+  }
+
+  &.wui-disabled {
+    color: var(--fill-color-accentText-disabled);
+    text-decoration: underline;
+  }
+}
