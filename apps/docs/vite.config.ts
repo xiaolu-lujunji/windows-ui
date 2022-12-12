@@ -14,6 +14,9 @@ export default defineConfig({
   resolve: {
     alias: {
       '@wui/core': path.resolve(process.cwd(), '../../packages/wui-core/src'),
+      '@wui/animation': path.resolve(process.cwd(), '../../packages/wui-animation/src'),
+      '@wui/hooks': path.resolve(process.cwd(), '../../packages/wui-hooks/src'),
+      '@wui/utils': path.resolve(process.cwd(), '../../packages/wui-utils/src'),
     },
   },
 })

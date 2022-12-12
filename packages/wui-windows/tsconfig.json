@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "lib": ["esnext", "dom", "dom.iterable"],
-    "module": "commonjs",
+    "lib": ["esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
     "esModuleInterop": true,
-    "strict": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "strict": true
   },
   "include": ["src"],
   "exclude": ["node_modules"]

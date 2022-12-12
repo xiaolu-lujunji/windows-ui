@@ -17,9 +17,10 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@wui/core/*": ["../../packages/wui-core/src/*"]
+      "@wui/core/*": ["../../packages/wui-core/src/*"],
+      "@wui/animation/*": ["../../packages/wui-animation/src/*"]
     }
   },
-  "include": ["src", "cypress"],
+  "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

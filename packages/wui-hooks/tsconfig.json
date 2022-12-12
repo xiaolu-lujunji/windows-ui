@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "lib": ["esnext", "dom", "dom.iterable"],
+    "lib": ["esnext"],
     "module": "commonjs",
     "esModuleInterop": true,
     "strict": true,
-    "jsx": "react-jsx"
+    "baseUrl": ".",
+    "paths": {
+      "@wui/utils/*": ["../wui-utils/src/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules"]

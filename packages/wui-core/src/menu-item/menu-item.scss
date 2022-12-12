@@ -7,5 +7,29 @@
   width: 280px;
   height: 40px;
   padding: 7px 11px;
-  margin: 3px 5px;
+  margin: 3px 0px;
+  border-radius: 3px;
+  color: var(--fill-color-text-primary);
+
+  &:first-child {
+    margin-top: 0px;
+  }
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+
+  &:hover {
+    background-color: var(--fill-color-subtle-secondary);
+  }
+
+  &:active {
+    color: var(--fill-color-text-secondary);
+    background-color: var(--fill-color-subtle-tertiary);
+  }
+
+  &.wui-disabled {
+    color: var(--fill-color-text-disabled);
+    background-color: transparent;
+  }
 }

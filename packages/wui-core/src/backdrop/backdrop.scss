@@ -1,0 +1,17 @@
+.wui-backdrop {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-smoke-default);
+  z-index: -1;
+  transition: opacity 83ms linear 0ms;
+}
+
+.wui-backdrop-invisible {
+  background-color: transparent;
+}
