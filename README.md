@@ -2,6 +2,16 @@
 
 Implements Microsoft's Windows UI Library in React.
 
+# Windows 11 signature experiences
+
+- [ ] Geometry
+- [ ] Color
+- [ ] Layering and elevation
+- [ ] Materials
+- [ ] Iconography
+- [ ] Typography
+- [ ] Motion
+
 # Roadmap
 
 - [ ] accordion

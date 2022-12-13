@@ -1,0 +1,25 @@
+.wui-mica {
+  position: relative;
+  border: 1px solid var(--surface-stroke-default);
+  border-radius: 7px;
+
+  .wui-mica-gaussian-blur,
+  .wui-mica-luminosity-blend,
+  .wui-mica-color-blend,
+  .wui-mica-content {
+    position: absolute;
+    border-radius: 7px;
+  }
+
+  .wui-mica-gaussian-blur {
+    backdrop-filter: blur(120px);
+  }
+
+  .wui-mica-luminosity-blend {
+    mix-blend-mode: luminosity;
+  }
+
+  .wui-mica-color-blend {
+    mix-blend-mode: color;
+  }
+}

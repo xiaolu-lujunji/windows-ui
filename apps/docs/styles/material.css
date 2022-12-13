@@ -1,0 +1,18 @@
+.mica-playground {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 500px;
+  min-height: 587px;
+  border-radius: 7px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.mica-playground.light {
+  background-image: url('https://images8.alphacoders.com/115/1152272.jpg');
+}
+
+.mica-playground.dark {
+  background-image: url('https://images4.alphacoders.com/115/1152251.jpg');
+}

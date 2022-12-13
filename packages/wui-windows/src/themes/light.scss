@@ -1,0 +1,60 @@
+:root {
+  // Fill
+  --accent-default: #005fb8;
+  --accent-secondary: rgba(0, 95, 184, 0.9);
+  --accent-tertiary: rgba(0, 95, 184, 0.8);
+  --accent-disabled: rgba(0, 0, 0, 0.2169);
+
+  --control-default: rgba(255, 255, 255, 0.7);
+  --control-secondary: rgba(249, 249, 249, 0.5);
+  --control-tertiary: rgba(249, 249, 249, 0.3);
+  --control-disabled: rgba(249, 249, 249, 0.3);
+
+  // Text
+  --text-primary: rgba(0, 0, 0, 0.8956);
+  --text-secondary: rgba(0, 0, 0, 0.6063);
+  --text-disabled: rgba(0, 0, 0, 0.3614);
+
+  --text-on-accent-primary: #ffffff;
+  --text-on-accent-secondary: rgba(255, 255, 255, 0.7);
+  --text-on-accent-disabled: #ffffff;
+
+  // Stroke
+  --control-stroke-default: rgba(0, 0, 0, 0.0578);
+  --control-stroke-on-accent-default: rgba(255, 255, 255, 0.08);
+
+  --focus-stroke-outer: rgba(0, 0, 0, 0.8956);
+
+  --surface-stroke-default: rgba(117, 117, 117, 0.4);
+}
+
+// Elevation
+
+.wui-elevation-control-border::before {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.0578) 90.58%, rgba(0, 0, 0, 0.1622) 100%);
+}
+.wui-elevation-accent-control-border::before {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 90.67%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+// Mica Background
+.wui-mica-background-with-tint-opacity {
+  background: rgba(243, 243, 243, 0.5);
+}
+
+.wui-mica-background-with-luminosity-opacity {
+  background: rgba(243, 243, 243, 1);
+}
+
+.wui-mica-background-alt-with-tint-opacity {
+  background: rgba(218, 218, 218, 0.5);
+}
+
+.wui-mica-background-alt-with-luminosity-opacity {
+  background: rgba(218, 218, 218, 1);
+}
+
+// Shell Shadows
+.wui-active-window-shadow {
+  box-shadow: 0px 32px 64px rgba(0, 0, 0, 0.28), 0px 2px 21px rgba(0, 0, 0, 0.22);
+}

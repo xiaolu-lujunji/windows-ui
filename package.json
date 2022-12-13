@@ -3,7 +3,7 @@
   "description": "Implements Microsoft's Windows UI Library in React.",
   "license": "MIT",
   "scripts": {
-    "test": "cd apps/docs && npm run cypress:open",
+    "test": "cd apps/test && npm run cypress:open",
     "docs": "cd apps/docs && npm run dev",
     "build:docs": "cd apps/docs && npm run build"
   },

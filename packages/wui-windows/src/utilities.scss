@@ -1,0 +1,26 @@
+// Layout
+
+.wui-inset-0 {
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+// Typography
+
+.wui-typography-body {
+  font-family: 'Segoe UI Variable';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+// Other
+
+// TODO: how to implement inner stroke?
+.wui-focus-stroke:focus-visible {
+  outline: 2px solid var(--focus-stroke-outer);
+  outline-offset: 1px;
+}
