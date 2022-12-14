@@ -1,0 +1,22 @@
+.wui-acrylic {
+  position: relative;
+  border: 1px solid var(--surface-stroke-default);
+  border-radius: 7px;
+
+  .wui-acrylic-gaussian-blur,
+  .wui-luminosity-blend,
+  .wui-color-blend,
+  .wui-acrylic-noise-texture,
+  .wui-acrylic-content {
+    position: absolute;
+    border-radius: 7px;
+  }
+
+  .wui-acrylic-gaussian-blur {
+    backdrop-filter: blur(30px);
+  }
+
+  .wui-acrylic-noise-texture {
+    background-image: url('./NoiseAsset_256.png');
+  }
+}

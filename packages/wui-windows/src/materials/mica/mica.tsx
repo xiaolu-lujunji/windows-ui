@@ -18,7 +18,7 @@ const Mica = React.forwardRef<HTMLDivElement, MicaProps>(function Mica(props, re
       <div
         className={clsx(
           'wui-inset-0',
-          'wui-mica-luminosity-blend',
+          'wui-luminosity-blend',
           variant === 'base'
             ? 'wui-mica-background-with-luminosity-opacity'
             : 'wui-mica-background-alt-with-luminosity-opacity'
@@ -27,7 +27,7 @@ const Mica = React.forwardRef<HTMLDivElement, MicaProps>(function Mica(props, re
       <div
         className={clsx(
           'wui-inset-0',
-          'wui-mica-color-blend',
+          'wui-color-blend',
           variant === 'base'
             ? 'wui-mica-background-with-tint-opacity'
             : 'wui-mica-background-alt-with-tint-opacity'

@@ -1,4 +1,4 @@
-// Layout
+/* Layout */
 
 .wui-inset-0 {
   top: 0px;
@@ -7,7 +7,7 @@
   left: 0px;
 }
 
-// Typography
+/* Typography */
 
 .wui-typography-body {
   font-family: 'Segoe UI Variable';
@@ -17,10 +17,18 @@
   line-height: 20px;
 }
 
-// Other
+/* Other */
 
-// TODO: how to implement inner stroke?
+/* TODO: how to implement inner stroke? */
 .wui-focus-stroke:focus-visible {
   outline: 2px solid var(--focus-stroke-outer);
   outline-offset: 1px;
+}
+
+.wui-luminosity-blend {
+  mix-blend-mode: luminosity;
+}
+
+.wui-color-blend {
+  mix-blend-mode: color;
 }
