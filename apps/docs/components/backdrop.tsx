@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 export default function Backdrop({ mode }: { mode: 'light' | 'dark' }) {
   return (
     <div
@@ -9,9 +11,19 @@ export default function Backdrop({ mode }: { mode: 'light' | 'dark' }) {
       {/* Gaussian blur */}
       <div className="absolute inset-0 backdrop-blur-[120px]"></div>
       {/* Luminosity blend */}
-      <div className="absolute inset-0 mix-blend-luminosity wui-mica-background-with-luminosity-opacity"></div>
+      <div
+        className="absolute inset-0 mix-blend-luminosity"
+        css={(theme) => ({
+          background: theme.wui.colors.mica.base.withLuminosityOpacity,
+        })}
+      ></div>
       {/* Tint/Color blend */}
-      <div className="absolute inset-0 mix-blend-color wui-mica-background-with-tint-opacity"></div>
+      <div
+        className="absolute inset-0 mix-blend-color"
+        css={(theme) => ({
+          background: theme.wui.colors.mica.base.withTintOpacity,
+        })}
+      ></div>
     </div>
   )
 }

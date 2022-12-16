@@ -8,7 +8,8 @@ export default function Home({ mode }: { mode: 'light' | 'dark' }) {
     <Layout mode={mode}>
       <Head>
         <title>Windows UI</title>
-        <meta name="description" content="Implement Windows UI in React." />
+        <meta name="description" content="Implements Windows UI in React." />
+        <meta name="keywords" content="fluent design,windows ui,react ui library" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div
@@ -19,7 +20,7 @@ export default function Home({ mode }: { mode: 'light' | 'dark' }) {
         className="h-[256px] rounded-[7px] pt-[90px] pl-[50px]"
       >
         <h1 className="text-3xl font-bold">Windows UI</h1>
-        <p className="mt-2 text-base">Implement Windows UI in React.</p>
+        <p className="mt-2 text-base">Implements Windows UI in React.</p>
       </div>
     </Layout>
   )

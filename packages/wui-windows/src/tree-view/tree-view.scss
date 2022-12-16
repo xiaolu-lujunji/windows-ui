@@ -1,0 +1,18 @@
+.wui-tree-view {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  margin: 0px;
+}
+
+.wui-tree-item {
+  box-sizing: border-box;
+  padding: 3px 11px;
+  margin: 3px 5px;
+  border-radius: 3px;
+
+  &:hover {
+    background-color: var(--subtle-secondary);
+  }
+}

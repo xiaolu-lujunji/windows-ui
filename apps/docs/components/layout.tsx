@@ -1,5 +1,7 @@
-import ThemeProvider from '@wui/windows/theme-provider'
+/** @jsxImportSource @emotion/react */
+import { ThemeProvider } from '@emotion/react'
 import Backdrop from './backdrop'
+import { lightTheme, darkTheme } from '@wui/windows/themes'
 
 export default function Layout({
   mode,
@@ -9,12 +11,25 @@ export default function Layout({
   children?: React.ReactNode
 }) {
   return (
-    <ThemeProvider mode={mode} className="w-full h-screen flex">
-      <Backdrop mode={mode} />
-      <nav className="w-[320px]"></nav>
-      <main className="flex-1 p-[45px] mt-8 rounded-tl-[7px] border border-solid border-[var(--card-stroke-default)] bg-[var(--background-layer-default)]">
-        {children}
-      </main>
+    <ThemeProvider theme={mode === 'light' ? lightTheme : darkTheme}>
+      <div
+        className="w-full h-screen flex"
+        css={(theme) => ({
+          color: theme.wui.colors.text.primary,
+        })}
+      >
+        <Backdrop mode={mode} />
+        <nav className="w-[320px]"></nav>
+        <main
+          className="flex-1 p-[45px] mt-8 rounded-tl-[7px] border border-solid"
+          css={(theme) => ({
+            borderColor: theme.wui.colors.stroke.card.default,
+            backgroundColor: theme.wui.colors.layer.default,
+          })}
+        >
+          {children}
+        </main>
+      </div>
     </ThemeProvider>
   )
 }

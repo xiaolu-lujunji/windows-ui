@@ -20,6 +20,8 @@ import './commands'
 // require('./commands')
 
 import { mount } from 'cypress/react18'
+import { ThemeProvider } from '@emotion/react'
+import { lightTheme } from '@wui/windows/themes'
 
 // Augment the Cypress namespace to include type definitions for
 // your custom command.
@@ -33,10 +35,9 @@ declare global {
   }
 }
 
-Cypress.Commands.add('mount', mount)
+Cypress.Commands.add('mount', (jsx, options) => {
+  mount(<ThemeProvider theme={lightTheme}>{jsx}</ThemeProvider>, options)
+})
 
 // Example use:
 // cy.mount(<MyComponent />)
-
-import '@wui/windows/themes/light.scss'
-import '@wui/windows/utilities.scss'

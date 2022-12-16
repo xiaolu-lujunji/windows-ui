@@ -10,15 +10,19 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@floating-ui/dom": "^1.0.10",
+    "@babel/core": "^7.20.5",
     "clsx": "^1.2.1"
   },
   "devDependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@types/react": "^18.0.26",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "peerDependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
